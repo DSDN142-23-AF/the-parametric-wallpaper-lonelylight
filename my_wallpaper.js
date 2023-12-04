@@ -10,11 +10,14 @@ let b_pointer = true;
 let gradient_counter = 0;
 let gradient_limit = 100;//how many times you draw the pixel then change the gradient degree?(doesn't change so much, this is just for test and fun)
 let offset = 2;//color change offset(desire the degree of color change)
+//note: this vars do not need to change, every time you generate a picture is different, whatever you changed variables will not make so many difference.
+//fun things: looks like the wallpaper generater will draw 12*5 each time, not just copy and paste same things.
+//so this mean i make a wall paper that got each cell is different, randomize works very well.
 
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -140,6 +143,6 @@ function petal_generater(number,x,y,rd,r_ring,r,g,b,layer){//number:petal number
   for(var i=1;i<number+1;i++){
     circle(get_location_x(x,radius_ring,360/number*i),get_location_y(y,radius_ring,180/number*i),radius);//draw circle by angle
   }
-  petal_generater(Math.round(Math.random()*5+1),x,y,radius,radius_ring,Math.random()*255,Math.random()*255,Math.random()*255,layer)//generate next flower ring
+  petal_generater(Math.round(Math.random()*5+1),x,y,radius,radius_ring,Math.random()*255,Math.random()*255,Math.random()*255,layer)//generate next flower
   }
 }
