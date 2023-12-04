@@ -25,3 +25,5 @@ let offset = 2;//color change offset(desire the degree of color change)
 //fun things: looks like the wallpaper generater will draw 12*5 each time, not just copy and paste same things.
 //so this mean i make a wall paper that got each cell is different, randomize works very well.
 //good news: no need to check this file.
+
+Wallpaper 9: special old crt fasion version, see line 92.
